@@ -12,6 +12,5 @@ imgDialation = cv2.dilate(imgCanny, kernel, iterations=5)
 
 imgEroded = cv2.erode(imgDialation, kernel, iterations=1)
 
-cv2.imshow("Canny", imgCanny)
 cv2.imshow("Eroded", imgEroded)
 cv2.waitKey(0)
