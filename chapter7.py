@@ -4,8 +4,6 @@ import numpy as np
 def empty(_):
     pass
 
-
-
 cv2.namedWindow("TrackBars")
 cv2.resizeWindow("Trackbars", 640, 240)
 cv2.createTrackbar("hue min", "TrackBars", 0, 179, empty)
@@ -33,7 +31,8 @@ while True:
     img_result = cv2.bitwise_and(img, img, mask=mask)
 
     # cv2.imshow("original", img)
-    # cv2.imshow("image", mask)
+    cv2.imshow("image", mask)
 
-    cv2.imshow("result", img_result)
-    cv2.waitKey(1)
+    # cv2.imshow("result", img_result)
+    if cv2.waitKey(1) & 0xFF == ord("q"):
+        break
